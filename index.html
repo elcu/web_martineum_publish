@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}" />
+    <title>Martineum Café</title>
+</head>
+
+<body>
+
+    <div class="not_supp_container">
+        <p>Táto stránka nie je podporovaná na vašom zariadení.</p>
+    </div>
+
+    <div class="main_body">
+        <header class="main_nav">
+            <div class="main_nav_header">
+                <h1>Martineum Café</h1>
+            </div>
+            <div class="main_nav_links">
+                <nav>
+                    <ul>
+                        <!-- <li class="nav_button nav_button_1 nav_buttons"><a href="#id_gallery">Galéria</a></li>
+                        <li class="nav_button nav_button_2 nav_buttons"><a href="#id_map">Lokácia</a></li>
+                        <li class="nav_button nav_button_3 nav_buttons"><a href="#id_contact_form">Kontakt</a></li> -->
+                        <li class="nav_button nav_button_1">Galéria</a></li>
+                        <li class="nav_button nav_button_2">Lokácia</a></li>
+                        <li class="nav_button nav_button_3">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="opening_hours">
+            <img class="img_1" src="{% static 'images/flower_1_svg.svg' %}" alt="Flower image 1">
+            <img class="img_2" src="{% static 'images/flower_2_svg.svg' %}" alt="Flower image 2">
+            <div class="opening_hours_main">
+                <article>
+                    <p>Otváracie Hodiny</p>
+                    <p>Pondelok - Nedeľa</p>
+                    <p>10:00 - 20:00</p>
+                </article>
+            </div>
+        </main>
+
+        <section id="id_gallery" class="gallery">
+            <div class="gallery_layer">
+                <div class="gallery_images_wrapper">
+                    <img class="martineum_image_1" style="order: 1" src="{% static 'images/martineum_image_1.png' %}" alt="Photo of Martineum café 1">
+                    <img class="martineum_image_2 focus_image" style="order: 2" src="{% static 'images/martineum_image_2.png' %}" alt="Photo of Martineum café 2">
+                    <img class="martineum_image_3" style="order: 3" src="{% static 'images/martineum_image_3.png' %}" alt="Photo of Martineum café 3">
+                </div>
+                <img class="arrow_left" src="{% static 'images/arrow_left_png.png' %}" alt="Arrow left for moving gallery images">
+                <img class="arrow_right" src="{% static 'images/arrow_right_png.png' %}" alt="Arrow right for moving gallery images">
+                <div class="gallery_dot_tracker">
+                    <span class="gallery_dot"></span>
+                    <span class="gallery_dot"></span>
+                    <span class="gallery_dot"></span>
+                </div>
+                 <div class="gallery_dot_tracker_active">
+                    <span class="gallery_dot_active" style="transform: translateX(20px)"></span>             
+                </div>
+            </div>
+        </section>
+
+        <section id="id_map" class="map">
+            <div class="map_layer">
+                <p class="map_text">Naša kaviareň sa nachádza v tesnej blízkosti Dómu svätého Martina.</p>
+                <p class="map_text_phone">Naša kaviareň sa nachádza v tesnej <br> blízkosti Dómu svätého Martina.</p>
+                <iframe
+                    id="id_map_ref" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.3607392898934!2d17.10608594393169!3d48.14185017753996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8904e8a00205%3A0x2af938a65db6941f!2sMartineum%20caf%C3%A9!5e0!3m2!1sen!2ssk!4v1748104224248!5m2!1sen!2ssk"
+                    width="900" height="400" style="border:0;" allow="fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="id_contact_form" class="contact_form">
+            <div class="contact_form_layer">
+                <p class="contact_form_text">
+                    Pre rezervácie alebo bližšie informácie nás kontaktujte na e-mailovej adrese<br>
+                    info@martineum.sk alebo telefonicky na čísle +421 944 667 444.
+                </p>
+                <p class="contact_form_text_small_screen">
+                    Pre rezervácie alebo bližšie informácie nás kontaktujte na emailovej adrese info@martineum.sk alebo telefonicky na čísle +421 944 667 444.
+                </p>
+                <img class="img_3" src="{% static 'images/flower_3_svg.svg' %}" alt="Flower image 3">
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer_logos_wrapper">
+                <a href="https://www.facebook.com/martineumcafe/" target="_blank">
+                    <img class="network_service facebook" src="{% static 'images/logo_facebook.png' %}" alt="Link on Martineum café Facebook page">
+                </a>
+                <a href="https://www.instagram.com/martineumcafe/" target="_blank">
+                    <img class="network_service instagram" src="{% static 'images/logo_instagram.png' %}" alt="Link on Martineum café Instagram">
+                </a>
+            </div> 
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+
+</body>
+
+</html>

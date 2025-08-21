@@ -1,0 +1,1113 @@
+/* - - - - 1. General - - - - */
+@font-face {
+    font-family: 'font_neohellenic';
+    src: url('../fonts/gfsneohellenic-regular.ttf') format('truetype');
+}
+
+html {
+    font-size: 62.5%; /* This sets the base font size to 10px, making rem calculations easier */
+}
+
+body {
+    background-color: #E8F3F5;
+    font-family: 'font_neohellenic', 'Tahoma';
+    color: #352f36;
+    margin: 0; /* Removes default margin present in browsers */
+    overflow-x: hidden; /* Hides anything that spills outside horizontally */ 
+}
+
+a {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits color from parent element */
+  cursor: pointer; /* Keeps the link-like behavior */
+}
+
+.not_supp_container {
+    display: none; /* Hide message for not supported devices by default globally */
+}
+
+/* ↓↓ Elements that are visible only on small screen */
+.map_text_phone {
+    display: none; /* Hide for all media screens above phones */
+}
+
+.contact_form_text_small_screen {
+    display: none; /* Hide for all media screens above phones */
+}
+
+/* - - - - 2. Wide screen - - - - */
+@media screen and (width >= 1024px) {
+
+    /* - - - - 2.1 Main navigation - - - - */
+    .main_nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_nav_header h1 {
+        font-size: 6rem;
+        font-weight: normal;
+        margin-top: 10rem;
+        margin-bottom: 5rem;
+    }
+    
+    .main_nav_links ul {
+        position: relative;
+        display: flex;
+        list-style: none;
+        gap: 7rem;
+        padding: 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        font-size: 3.5rem;
+    }
+
+    .nav_button {
+        transition: transform 0.4s ease-in-out;
+    }
+    .nav_button:hover {
+        transform: translateY(-10%) scale(1.05); /* Slightly enlarged on hover */
+    }
+
+    /* - - - - 2.2 Opening hours - - - - */
+    .opening_hours {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 30rem;
+        justify-content: center;
+    }
+
+    .opening_hours_main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .opening_hours_main article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opening_hours_main p {
+        font-size: 3.5rem;
+        margin: 0.5rem;
+    }
+
+    .img_1 {
+        position: absolute;
+        max-width: 15rem;
+        max-height: auto;
+        bottom: -1.4rem;
+        left: 50%; /* Center by left edge to the center of screen */
+        transform: translateX(-100%) translateX(-16.5rem); /* Move by its own width to left, having right edge at the center of screen, then move by additional X pixels */
+    }
+
+    .img_2 {
+        position: absolute;
+        max-width: 9rem;
+        max-height: auto;
+        left: 50%;
+        bottom: -2.5rem;
+        transform: translateX(19rem);
+        rotate: -6deg;
+    }
+
+    /* - - - - 2.3 Gallery - - - - */
+    .gallery {
+        position: relative;
+        background-color: #80B3A0;
+        height: 60rem;
+    }
+
+    .gallery_layer {
+        position: relative;
+        /* display: flex; */ /* DELETE EVERYWHERE ????? */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        aspect-ratio: 9 / 4; /* 90rem / 40rem ratio */
+        max-width: 90rem;
+        background-color: #E8F3F5;
+        border-radius: 10px;
+    }
+
+    .arrow_left {
+        position: absolute;
+        width: 7.5vw;
+        max-width: 12rem;
+        max-height: auto;
+        top: 50%;
+        transform: translate(-120%, -50%); /* Center the arrow vertically, shift slightly to left */
+        transition: transform 0.4s ease;
+    }
+    .arrow_left:hover {
+        transform: translate(-120%, -50%) scale(1.10); /* Slightly enlarged on hover */
+    }
+
+    .arrow_right {
+        position: absolute;
+        width: 7.5vw;
+        max-width: 12rem;
+        max-height: auto;
+        top: 50%;
+        right: 0; /* Align to the right edge */
+        transform: translate(120%, -50%); /* Center the arrow vertically, shift slightly to right */
+        transition: transform 0.4s ease;
+    }
+    .arrow_right:hover {
+        transform: translate(120%, -50%) scale(1.10); /* Slightly enlarged on hover */
+    }
+
+    .gallery_images_wrapper {
+        position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+    }
+
+    .martineum_image_1 {
+        width: 21%;
+        border-radius: 10px;
+    }
+
+     .martineum_image_2 {
+        width: 25%;
+        border-radius: 10px;
+    }
+
+    .martineum_image_3 {
+        width: 30%;
+        border-radius: 10px;
+    }
+
+    .gallery_dot_tracker {
+        position: absolute;
+            bottom: -10%;
+            left: 0%;
+        display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: #E8F3F5;
+        height: 2.3rem;
+        width: 5.5rem;
+        border-radius: 10px;
+    }
+
+    .gallery_dot {
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: #D6D5D6;
+        border-radius: 50%;
+    }
+
+    .gallery_dot_tracker_active {
+         position: absolute;
+            bottom: -10%;
+            left: 0%;
+        display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: transparent;
+        height: 2.3rem;
+        width: 5.5rem;
+        border-radius: 10px;
+    }
+
+    .gallery_dot_active {
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: #80B3A0;
+        border-radius: 50%;
+    }   
+
+    /* - - - - 2.4 Map - - - - */
+    .map {
+        position: relative;
+        background-color: #E8F3F5;
+        height: 60rem;
+    }
+
+    .map_layer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        max-width: 90rem;
+        aspect-ratio: 9 / 4;
+    }
+
+    .map_layer iframe {
+        border-radius: 10px;
+        overflow: hidden;  
+        width: 100%;
+        height: 100%; /* Adjust height to maintain aspect ratio */
+    }
+
+    .map_layer p {
+        margin-top: 0;
+        margin-bottom: 2.8rem;
+        font-size: 2.6rem;
+    }
+
+    /* - - - - 2.5 Contact form - - - - */
+    .contact_form {
+        position: relative;
+        background-color: #80B3A0;  
+        height: 60rem;
+    }
+
+    .contact_form_layer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        max-width: 90rem;
+        height: 17rem;
+        background-color: #E8F3F5;
+        border-radius: 10px;
+    }
+
+    .contact_form_text {
+        font-size: clamp(2.2rem, calc(2.2rem + 0.2 * ((100vw - 1024px) / 15)), 2.4rem);
+        text-align: center;
+        z-index: 1;
+    }
+
+    .img_3 {
+        position: absolute;
+        max-width: 8.5rem;
+        max-height: auto;
+        bottom: 0;
+        left: 2.5%;
+    }     
+
+    /* - - - - 2.6 Footer - - - - */
+    footer {
+        position: relative;
+        height: 6rem;
+        background-color: #E8F3F5;
+    }
+
+    .footer_logos_wrapper {
+        display: flex;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        height: 4rem;
+        width: 79%;
+        max-width: 90rem;
+        justify-content: flex-start;
+        gap: 1.6rem;
+    }
+
+    .network_service {
+        max-width: 4rem;
+        max-height: auto;
+    }
+
+}
+
+
+/* - - - - 3. Tablets - - - - */
+@media screen and (768px <= width < 1024px) {
+
+     /* - - - - 3.1 Main navigation - - - - */
+    .main_nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_nav_header h1 {
+        font-size: 5rem;
+        font-weight: normal;
+        margin-top: 9rem;
+        margin-bottom: 4rem;
+    }
+    
+    .main_nav_links ul {
+        position: relative;
+        display: flex;
+        list-style: none;
+        gap: 7rem;
+        padding: 0;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        font-size: 3rem;
+    }
+
+    .nav_button {
+        transition: transform 0.4s ease-in-out;
+    }
+    .nav_button:hover {
+        transform: translateY(-10%) scale(1.05); /* Slightly enlarged on hover */
+    }
+
+    /* - - - - 3.2 Opening hours - - - - */
+    .opening_hours {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 25rem;
+        justify-content: center;
+    }
+
+    .opening_hours_main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .opening_hours_main article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opening_hours_main p {
+        font-size: 3rem;
+        margin: 0.5rem;
+    }
+
+    .img_1 {
+        position: absolute;
+        max-width: 13rem;
+        max-height: auto;
+        bottom: -1.4rem;
+        left: 50%; /* Center by left edge to the center of screen */
+        transform: translateX(-100%) translateX(-15rem); /* Move by its own width to left, having right edge at the center of screen, then move by additional X pixels */
+    }
+
+    .img_2 {
+        position: absolute;
+        max-width: 7.5rem;
+        max-height: auto;
+        left: 50%;
+        bottom: -2.5rem;
+        transform: translateX(17.5rem);
+        rotate: -6deg;
+    }
+
+    /* - - - - 3.3 Gallery - - - - */
+    .gallery {
+        position: relative;
+        background-color: #80B3A0;
+        height: 40rem;
+    }
+
+    .gallery_layer {
+        position: relative;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        aspect-ratio: 9 / 4;
+        max-width: 65rem;
+        background-color: #E8F3F5;
+        border-radius: 10px;
+    }
+
+    .arrow_left {
+        position: absolute;
+        width: 7.5vw;
+        max-width: 12rem;
+        max-height: auto;
+        top: 50%;
+        transform: translate(-120%, -50%); /* Center the arrow vertically, shift slightly to left */
+        transition: transform 0.4s ease;
+    }
+    .arrow_left:hover {
+        transform: translate(-120%, -50%) scale(1.10); /* Slightly enlarged on hover */
+    }
+
+    .arrow_right {
+        position: absolute;
+        width: 7.5vw;
+        max-width: 12rem;
+        max-height: auto;
+        top: 50%;
+        right: 0; /* Align to the right edge */
+        transform: translate(120%, -50%); /* Center the arrow vertically, shift slightly to right */
+        transition: transform 0.4s ease;
+    }
+    .arrow_right:hover {
+        transform: translate(120%, -50%) scale(1.10); /* Slightly enlarged on hover */
+    }
+
+    .gallery_images_wrapper {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .martineum_image_1 {
+        width: 29%;
+        border-radius: 10px;
+    }
+
+     .martineum_image_2 {
+        width: 28%;
+        border-radius: 10px;
+    }
+
+    .martineum_image_3 {
+        width: 21%;
+        border-radius: 10px;    
+    }
+
+    /* - - - - 3.4 Map - - - - */
+    .map {
+        position: relative;
+        background-color: #E8F3F5;
+        height: 40rem;
+    }
+
+    .map_layer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        max-width: 65rem;
+        aspect-ratio: 9 / 4;
+    }
+
+    .map_layer iframe {
+        border-radius: 10px;
+        overflow: hidden;  
+        width: 100%;
+        height: 100%; /* Adjust height to maintain aspect ratio */
+    }
+
+    .map_layer p {
+        margin-top: 0;
+        margin-bottom: 2.2rem;
+        font-size: 2rem;
+    }
+
+    /* - - - - 3.5 Contact form - - - - */
+    .contact_form {
+        position: relative;
+        background-color: #80B3A0;  
+        height: 40rem;
+    }
+
+    .contact_form_layer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        max-width: 65rem;
+        height: 12rem;
+        background-color: #E8F3F5;
+        border-radius: 10px;
+    }
+
+    .contact_form_text {
+        font-size: clamp(1.65rem, calc(1.65rem + 0.15 * ((100vw - 768px) / 15)), 1.8rem);
+        text-align: center;
+        z-index: 1;
+    }
+
+    .img_3 {
+        position: absolute;
+        max-width: 5.5rem;
+        max-height: auto;
+        bottom: 0;
+        left: 2.5%;
+    }     
+
+    /* - - - - 3.6 Footer - - - - */
+    footer {
+        position: relative;
+        height: 4rem;
+        background-color: #E8F3F5;
+    }
+
+    .footer_logos_wrapper {
+        display: flex;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        height: 3rem;
+        width: 79%;
+        max-width: 65rem;
+        justify-content: flex-start;
+        gap: 1.2rem;
+    }
+
+    .network_service {
+        max-width: 3rem;
+        max-height: auto;
+    }   
+
+}
+
+
+/* - - - - 4. Mobile phones - - - - */
+@media screen and (420px <= width < 768px) {
+
+     /* - - - - 4.1 Main navigation - - - - */
+    .main_nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_nav_header h1 {
+        font-size: 4.2rem;
+        font-weight: normal;
+        margin-top: 7rem;
+        margin-bottom: 2rem;
+    }
+    
+    .main_nav_links ul {
+        position: relative;
+        display: flex;
+        list-style: none;
+        gap: 5rem;
+        padding: 0;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        font-size: 2.6rem;
+    }
+
+    .nav_button {
+        transition: transform 0.4s ease-in-out;
+    }
+    .nav_button:hover {
+        transform: translateY(-10%) scale(1.05); /* Slightly enlarged on hover */
+    }
+
+    /* - - - - 4.2 Opening hours - - - - */
+    .opening_hours {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 20rem;
+        justify-content: center;
+    }
+
+    .opening_hours_main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .opening_hours_main article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opening_hours_main p {
+        font-size: 2.6rem;
+        margin: 0.5rem;
+    }
+
+    .img_1 {
+        position: absolute;
+        max-width: 9.5rem;
+        max-height: auto;
+        bottom: -1.4rem;
+        left: 50%; /* Center by left edge to the center of screen */
+        transform: translateX(-100%) translateX(-10rem); /* Move by its own width to left, having right edge at the center of screen, then move by additional X pixels */
+    }
+
+    .img_2 {
+        position: absolute;
+        max-width: 6rem;
+        max-height: auto;
+        left: 50%;
+        bottom: -2.5rem;
+        transform: translateX(12.5rem);
+        rotate: -6deg;
+    }
+
+    /* - - - - 4.3 Gallery - - - - */
+    .gallery {
+        position: relative;
+        background-color: #80B3A0;
+        height: 40rem;
+    }
+
+    .gallery_layer {
+        position: relative;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        aspect-ratio: 1 / 1;
+        max-width: 33rem;
+        background-color: #E8F3F5;
+        border-radius: 10px;
+    }
+
+    .arrow_left {
+        position: absolute;
+        width: 8.5vw;
+        max-height: auto;
+        top: 50%;
+        transform: translate(-120%, -50%); /* Center the arrow vertically, shift slightly to left */
+        transition: transform 0.4s ease;
+    }
+    .arrow_left:hover {
+        transform: translate(-120%, -50%) scale(1.10); /* Slightly enlarged on hover */
+    }
+
+    .arrow_right {
+        position: absolute;
+        width: 8.5vw;
+        max-height: auto;
+        top: 50%;
+        right: 0; /* Align to the right edge */
+        transform: translate(120%, -50%); /* Center the arrow vertically, shift slightly to right */
+        transition: transform 0.4s ease;
+    }
+    .arrow_right:hover {
+        transform: translate(120%, -50%) scale(1.10); /* Slightly enlarged on hover */
+    }
+
+    .gallery_images_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .martineum_image_1 {
+        width: 67%;
+        border-radius: 10px;
+    }
+
+    .martineum_image_2 {
+        display: none;
+    }
+
+    .martineum_image_3 {
+        display: none;  
+    }
+
+    /* - - - - 4.4 Map - - - - */
+    .map {
+        position: relative;
+        background-color: #E8F3F5;
+        height: 40rem;
+    }
+
+    .map_layer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        max-width: 48rem;
+        max-height: 33rem;
+        aspect-ratio: 3 / 2;
+    }
+
+    .map_layer iframe {
+        border-radius: 10px;
+        overflow: hidden;  
+        width: 100%;
+        height: 100%; /* Adjust height to maintain aspect ratio */
+    }
+
+    .map_text {
+        display: none; /* Hide the main text used for media screens above phones */
+    }
+
+    .map_text_phone {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 2.2rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    /* - - - - 4.5 Contact form - - - - */
+    .contact_form {
+        position: relative;
+        background-color: #80B3A0;  
+        height: 40rem;
+    }
+
+    .contact_form_layer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        aspect-ratio: 3 / 1;
+        max-width: 48rem;
+        max-height: 14rem;
+        background-color: #E8F3F5;
+        border-radius: 10px;
+    }
+
+    .contact_form_text {
+        display: none;
+    }
+
+    .contact_form_text_small_screen {
+        display: block;
+        font-size: 1.7rem;
+        text-align: center;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        z-index: 1;
+    }
+
+    .img_3 {
+        position: absolute;
+        max-width: 12%;
+        max-height: auto;
+        bottom: 0;
+        right: -2.8%;
+    }     
+
+    /* - - - - 4.6 Footer - - - - */
+    footer {
+        position: relative;
+        height: 4rem;
+        background-color: #E8F3F5;
+    }
+
+    .footer_logos_wrapper {
+        display: flex;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        height: 3rem;
+        width: 79%;
+        max-width: 48rem;
+        justify-content: flex-start;
+        gap: 1.2rem;
+    }
+
+    .network_service {
+        max-width: 3rem;
+        max-height: auto;
+    }   
+
+}
+
+
+/* - - - - 5. Smallest - - - - */
+@media screen and (320px <= width < 420px) {
+    /*FINISH THIS*/
+    /* - - - - 5.1 Main navigation - - - - */
+    .main_nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_nav_header h1 {
+        font-size: 3.7rem;
+        font-weight: normal;
+        margin-top: 7rem;
+        margin-bottom: 2rem;
+    }
+    
+    .main_nav_links ul {
+        position: relative;
+        display: flex;
+        list-style: none;
+        gap: 3.3rem;
+        padding: 0;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        font-size: 2.4rem;
+    }
+
+    .nav_button {
+        transition: transform 0.4s ease-in-out;
+    }
+    .nav_button:hover {
+        transform: translateY(-10%) scale(1.05); /* Slightly enlarged on hover */
+    }
+
+    /* - - - - 5.2 Opening hours - - - - */
+    .opening_hours {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 20rem;
+        justify-content: center;
+    }
+
+    .opening_hours_main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .opening_hours_main article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opening_hours_main p {
+        font-size: 2.4rem;
+        margin: 0.5rem;
+    }
+
+    .img_1 {
+        position: absolute;
+        max-width: 9.5rem;
+        max-height: auto;
+        bottom: -1.4rem;
+        left: 50%; /* Center by left edge to the center of screen */
+        transform: translateX(-100%) translateX(-10rem); /* Move by its own width to left, having right edge at the center of screen, then move by additional X pixels */
+    }
+
+    .img_2 {
+        position: absolute;
+        width: 6.5rem;
+        /* overflow: hidden; */
+
+        max-width: 100%;
+        max-height: auto;
+        left: 50%;
+        bottom: -2.5rem;
+        transform: translateX(12.5rem);
+        rotate: -6deg;
+    }
+
+    /* - - - - 5.3 Gallery - - - - */
+    .gallery {
+        position: relative;
+        background-color: #80B3A0;
+        height: 40rem;
+    }
+
+    .gallery_layer {
+        position: relative;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        aspect-ratio: 1 / 1;
+        max-width: 33rem;
+        background-color: #E8F3F5;
+        border-radius: 10px;
+    }
+
+    .arrow_left {
+        position: absolute;
+        width: 8.5vw;
+        max-height: auto;
+        top: 50%;
+        transform: translate(-120%, -50%); /* Center the arrow vertically, shift slightly to left */
+        transition: transform 0.4s ease;
+    }
+    .arrow_left:hover {
+        transform: translate(-120%, -50%) scale(1.10); /* Slightly enlarged on hover */
+    }
+
+    .arrow_right {
+        position: absolute;
+        width: 8.5vw;
+        max-height: auto;
+        top: 50%;
+        right: 0; /* Align to the right edge */
+        transform: translate(120%, -50%); /* Center the arrow vertically, shift slightly to right */
+        transition: transform 0.4s ease;
+    }
+    .arrow_right:hover {
+        transform: translate(120%, -50%) scale(1.10); /* Slightly enlarged on hover */
+    }
+
+    .gallery_images_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .martineum_image_1 {
+        width: 67%;
+        border-radius: 10px;
+    }
+
+    .martineum_image_2 {
+        display: none;
+    }
+
+    .martineum_image_3 {
+        display: none;  
+    }
+
+    /* - - - - 5.4 Map - - - - */
+    .map {
+        position: relative;
+        background-color: #E8F3F5;
+        height: 40rem;
+    }
+
+    .map_layer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        max-width: 48rem;
+        max-height: 33rem;
+        aspect-ratio: 3 / 2;
+    }
+
+    .map_layer iframe {
+        border-radius: 10px;
+        overflow: hidden;  
+        width: 100%;
+        height: 100%; /* Adjust height to maintain aspect ratio */
+    }
+
+    .map_text {
+        display: none; /* Hide the main text used for media screens above phones */
+    }
+
+    .map_text_phone {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 2.2rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    /* - - - - 5.5 Contact form - - - - */
+    .contact_form {
+        position: relative;
+        background-color: #80B3A0;  
+        height: 40rem;
+    }
+
+    .contact_form_layer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        width: 79%;
+        aspect-ratio: 3 / 1;
+        max-width: 48rem;
+        max-height: 14rem;
+        background-color: #E8F3F5;
+        border-radius: 10px;
+    }
+
+    .contact_form_text {
+        display: none;
+    }
+
+    .contact_form_text_small_screen {
+        display: block;
+        font-size: 1.7rem;
+        text-align: center;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        z-index: 1;
+    }
+
+    .img_3 {
+        position: absolute;
+        max-width: 12%;
+        max-height: auto;
+        bottom: 0;
+        right: -2.8%;
+    }     
+
+    /* - - - - 5.6 Footer - - - - */
+    footer {
+        position: relative;
+        height: 4rem;
+        background-color: #E8F3F5;
+    }
+
+    .footer_logos_wrapper {
+        display: flex;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the layer */
+        height: 3rem;
+        width: 79%;
+        max-width: 48rem;
+        justify-content: flex-start;
+        gap: 1.2rem;
+    }
+
+    .network_service {
+        max-width: 3rem;
+        max-height: auto;
+    }
+
+}
+
+
+/* - - - - 6. Devices not supported - - - - */
+@media screen and (width < 320px) {
+
+    /* Hide everything except info message */
+
+    .main_body {
+        display: none;
+    }
+
+   .not_supp_container {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+    }
+
+    .not_supp_container p {
+        font-size: 2.1rem;
+        text-align: center;
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+    }
+
+}
